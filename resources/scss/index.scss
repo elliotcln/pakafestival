@@ -1,2 +1,9 @@
-@import "./base/variables";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+@import "./utilities/grid";
+
 @import "./base/reset";
+
+@import "./components/breadcrumb";
+
+@import "./layout/single-page";

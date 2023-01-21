@@ -1,0 +1,20 @@
+$gridColumns: 12;
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+
+  @include desktop {
+    grid-template-columns: repeat(#{$gridColumns}, 1fr);
+
+    @for $i from 1 through $gridColumns {
+      .grid-span--#{$i} {
+        grid-column-end: span #{$i};
+      }
+
+      .offset-#{$i} {
+        grid-column-start: #{$i + 1};
+      }
+    }
+  }
+}

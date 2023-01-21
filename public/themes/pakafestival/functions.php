@@ -93,3 +93,6 @@ add_action('login_head', function () {
         implode('', $styles)
     );
 });
+
+// get breadcrumb function
+include get_theme_file_path('inc/breadcrumb.php');
