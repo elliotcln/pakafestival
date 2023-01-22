@@ -1,3 +1,83 @@
+// section prog'
+.section-programmation {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--c-secondary) 0%,
+    var(--c-secondary) 55%,
+    var(--c-black) 55%,
+    var(--c-black) 100%
+  );
+
+  @include desktop {
+    background: linear-gradient(
+      to right,
+      var(--c-secondary) 0%,
+      var(--c-secondary) 50%,
+      var(--c-black) 50%,
+      var(--c-black) 100%
+    );
+  }
+
+  .grid {
+    gap: 0;
+
+    > div {
+      padding-block: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+
+    & + p {
+      margin-top: 1rem;
+    }
+  }
+
+  .button {
+    margin-top: 2rem;
+
+    &:not(.button--third) {
+      svg {
+        color: var(--c-primary);
+      }
+    }
+  }
+
+  .tickets {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    padding-inline: 4rem;
+    color: var(--c-white);
+
+    h2 {
+      color: var(--c-secondary);
+      text-align: center;
+
+      &::first-line {
+        font-size: 1.35rem;
+        color: var(--c-white);
+      }
+    }
+
+    &.is-closed {
+      h2 {
+        color: var(--c-third);
+      }
+
+      svg {
+        animation: heartbeat 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+          infinite both;
+        color: var(--c-third);
+      }
+    }
+  }
+}
+
 // about section
 .section-about {
   padding-block: 5rem;

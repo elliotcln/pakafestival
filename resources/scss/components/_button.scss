@@ -1,3 +1,5 @@
+// @use "sass:map";
+
 .button {
   display: inline-flex;
   gap: 0.5rem;
@@ -12,9 +14,44 @@
   letter-spacing: 0.02ch;
   text-decoration: none;
 
+  transition: transform 0.5s;
+  transform-origin: center;
+  will-change: transform;
+
   svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: currentColor;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  // styles
+  $styles: "primary", "secondary", "third", "fourth";
+  @each $style in $styles {
+    &--#{$style} {
+      background-color: var(--c-#{$style});
+      @if ($style == "third") {
+        color: var(--c-white);
+      } @else {
+        color: currentColor;
+      }
+
+      &:focus-visible {
+        outline-color: var(--c-#{$style});
+      }
+    }
+  }
+
+  &--as-link {
+    padding: 0;
+    background-color: transparent;
+    color: currentColor;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -4,7 +4,7 @@
         <div class="grid">
             <?php if (get_field('about_what')) : ?>
                 <article class="grid-span--5">
-                    <svg class="icon">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#ticket"></use>
                     </svg>
                     <h3><?= get_field('about_what'); ?></h3>
@@ -13,7 +13,7 @@
             <?php endif; ?>
             <?php if (get_field('about_music')) : ?>
                 <article class="grid-span--5 offset-6">
-                    <svg class="icon">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#music"></use>
                     </svg>
                     <h3><?= get_field('about_music'); ?></h3>
@@ -22,7 +22,7 @@
             <?php endif; ?>
             <?php if (get_field('about_when')) : ?>
                 <article class="grid-span--5">
-                    <svg class="icon">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#sun"></use>
                     </svg>
                     <h3><?= get_field('about_when'); ?></h3>
@@ -31,7 +31,7 @@
             <?php endif; ?>
             <?php if (get_field('about_where')) : ?>
                 <article class="grid-span--5 offset-6">
-                    <svg class="icon">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#map"></use>
                     </svg>
                     <h3><?= get_field('about_where'); ?></h3>
