@@ -12,7 +12,8 @@ $posttype_class = 'single-' . get_post_type();
     </header>
     <section class="<?= $posttype_class . '__content'; ?>">
         <div class="container grid">
-            <div class="grid-span--8 offset-2">
+            <div class="grid-span--8 offset-2 prose">
+                <?php the_post_thumbnail('post-thumbnail', ['class' => 'post-thumbnail']); ?>
                 <?php the_content(); ?>
             </div>
         </div>

@@ -1,0 +1,46 @@
+// about section
+.section-about {
+  padding-block: 5rem;
+  background-color: var(--c-light);
+
+  .grid {
+    gap: 2rem;
+    @include desktop {
+      row-gap: 5rem;
+    }
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--c-gray--dark);
+  }
+
+  h3 {
+    font-size: 2.25rem;
+    color: var(--c-fourth);
+  }
+
+  svg {
+    width: 5rem;
+    height: 5rem;
+    color: var(--c-primary);
+  }
+}
+
+// last blog posts
+.section-last-blog-posts {
+  padding-block: 8rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    & + p {
+      color: var(--c-gray--dark);
+    }
+  }
+
+  .button {
+    margin-top: 2rem;
+  }
+}

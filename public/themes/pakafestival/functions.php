@@ -6,9 +6,14 @@ add_action('after_setup_theme', function () {
 
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
+    add_theme_support('custom-logo');
+    add_theme_support('page-template');
+    add_theme_support('featured-content');
 
     register_nav_menus([
-        'navigation' => __('Navigation'),
+        'main' => __('Principal'),
+        'footer' => __('Footer'),
+        'social' => __('Social')
     ]);
 });
 
@@ -94,5 +99,16 @@ add_action('login_head', function () {
     );
 });
 
+/* Autoriser les fichiers SVG */
+function ttt_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+
+add_filter('upload_mimes', 'ttt_mime_types');
+
 // get breadcrumb function
 include get_theme_file_path('inc/breadcrumb.php');
+// ACF
+include get_theme_file_path('inc/acf.php');
