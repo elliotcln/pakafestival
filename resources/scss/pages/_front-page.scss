@@ -1,30 +1,66 @@
+// section media
+.section-media {
+  background-color: #000;
+}
+
 // section prog'
 .section-programmation {
-  position: relative;
-  background: linear-gradient(
-    to bottom,
-    var(--c-secondary) 0%,
-    var(--c-secondary) 55%,
-    var(--c-black) 55%,
-    var(--c-black) 100%
-  );
+  display: flex;
+  flex-direction: column;
 
   @include desktop {
-    background: linear-gradient(
-      to right,
-      var(--c-secondary) 0%,
-      var(--c-secondary) 50%,
-      var(--c-black) 50%,
-      var(--c-black) 100%
-    );
+    flex-direction: row;
   }
 
-  .grid {
-    gap: 0;
+  > article {
+    position: relative;
+    width: 100%;
+    padding-block: 4rem;
 
-    > div {
-      padding-block: 4rem;
-      padding-right: 4rem;
+    @include desktop {
+      width: 50%;
+
+      .container {
+        width: calc(var(--container-width) / 2);
+        max-width: 100%;
+        margin-inline: 0;
+      }
+    }
+  }
+
+  .prog {
+    display: flex;
+    background-color: var(--c-secondary);
+
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+  .tickets {
+    display: grid;
+    background-color: var(--c-black);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3.75rem;
+      height: 3.75rem;
+      background-color: var(--c-secondary);
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+
+      @include desktop {
+        left: 0;
+        top: 50%;
+      }
+    }
+
+    .container {
+      display: grid;
+      place-items: center;
+      place-content: center;
     }
   }
 
@@ -48,12 +84,6 @@
   }
 
   .tickets {
-    display: grid;
-    place-content: center;
-    place-items: center;
-    padding-inline: 4rem;
-    color: var(--c-white);
-
     h2 {
       color: var(--c-secondary);
       text-align: center;
@@ -114,6 +144,7 @@
   padding-block: 8rem;
 
   h2 {
+    font-size: 2.25rem;
     margin-bottom: 1rem;
     & + p {
       color: var(--c-gray--dark);
@@ -122,5 +153,49 @@
 
   .button {
     margin-top: 2rem;
+  }
+
+  .last-posts__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    @include desktop {
+      margin-top: 0;
+    }
+
+    span {
+      color: var(--c-gray--dark);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    li a {
+      display: flex;
+      gap: 1rem;
+      text-decoration: none;
+      color: currentColor;
+      border-radius: 1rem;
+
+      img {
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 1rem;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+
+      &:hover,
+      &:focus {
+        h3 {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

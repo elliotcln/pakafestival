@@ -1,0 +1,282 @@
+body.mobile-menu--is-open {
+  .nav-container {
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  .brand + .button {
+    .open {
+      display: none;
+    }
+    .close {
+      display: block;
+    }
+  }
+}
+
+.site-header {
+  padding-block: 1rem;
+  height: 6rem;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand + .button {
+    .close {
+      display: none;
+    }
+  }
+
+  .nav-container {
+    visibility: hidden;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 6rem 0 0 0;
+    background-color: var(--c-white);
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/themes/pakafestival/assets/images/topo-tile.png") repeat;
+      opacity: 0.03;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 100%;
+
+    font-family: var(--f-title);
+
+    ul {
+      padding-block: var(--gutter-width);
+      padding-inline: 0;
+    }
+
+    a {
+      font-size: 2.5rem;
+      color: currentColor;
+      text-decoration: none;
+    }
+
+    .is--ticket-shop {
+      width: 100%;
+      a {
+        @extend .button;
+        @extend .button--primary;
+        width: 100%;
+        border-radius: 0;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: var(--c-white);
+
+        &::before {
+          content: url("data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='ticket'%3e%3cpath d='M10.9023 19.8701H17.3723C21.0723 19.8701 21.9923 18.9501 21.9923 15.2501C20.7123 15.2501 19.6823 14.2101 19.6823 12.9401C19.6823 11.6601 20.7123 10.6201 21.9923 10.6201V9.70008C21.9923 6.00008 21.0723 5.08008 17.3723 5.08008H10.9923V11.8701' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3c/path%3e%3cpath opacity='0.4' d='M10.9936 16.87V19.87H8.22356C6.74356 19.87 5.87357 18.86 4.91357 16.54L4.73356 16.09C5.94356 15.61 6.53357 14.21 6.02357 13C5.53357 11.79 4.14357 11.21 2.92357 11.71L2.75357 11.28C1.31356 7.76 1.81357 6.53 5.33357 5.08L7.97357 4L10.9936 11.32V13.87' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3c/path%3e%3cpath d='M8.16219 19.8701H7.99219' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3c/path%3e%3c/svg%3e");
+          width: 2.5rem;
+          height: 2.5rem;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .main-nav {
+    ul {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin: 0;
+      list-style-type: none;
+    }
+  }
+
+  .social-links__nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: auto;
+    padding-block: 1rem;
+
+    a {
+      display: flex;
+    }
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+// .site-header {
+//   padding-block: 1rem;
+
+//   .container {
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: space-between;
+//   }
+
+//   .is--ticket-shop {
+//     a {
+//       @extend .button;
+//       @extend .button--primary;
+//       color: var(--c-white);
+
+//       &::before {
+//         content: url("data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='ticket'%3e%3cpath d='M10.9023 19.8701H17.3723C21.0723 19.8701 21.9923 18.9501 21.9923 15.2501C20.7123 15.2501 19.6823 14.2101 19.6823 12.9401C19.6823 11.6601 20.7123 10.6201 21.9923 10.6201V9.70008C21.9923 6.00008 21.0723 5.08008 17.3723 5.08008H10.9923V11.8701' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3c/path%3e%3cpath opacity='0.4' d='M10.9936 16.87V19.87H8.22356C6.74356 19.87 5.87357 18.86 4.91357 16.54L4.73356 16.09C5.94356 15.61 6.53357 14.21 6.02357 13C5.53357 11.79 4.14357 11.21 2.92357 11.71L2.75357 11.28C1.31356 7.76 1.81357 6.53 5.33357 5.08L7.97357 4L10.9936 11.32V13.87' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3c/path%3e%3cpath d='M8.16219 19.8701H7.99219' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3c/path%3e%3c/svg%3e");
+//         width: 1.5rem;
+//         height: 1.5rem;
+//         display: inline-block;
+//       }
+
+//       &:hover {
+//         color: var(--c-white);
+//       }
+//     }
+//   }
+// }
+
+// .site-header__mobile-nav {
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   font-family: var(--f-title);
+
+//   ul {
+//     visibility: hidden;
+//     overflow: hidden;
+//     width: 100%;
+//     height: 0;
+//     background-color: var(--c-white);
+//     margin: 0;
+//     padding: 0;
+//     list-style-type: none;
+
+//     display: flex;
+//     gap: 1rem;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+
+//     .is--ticket-shop a {
+//       font-size: 2.3em;
+
+//       &::before {
+//         width: 2.8rem;
+//         height: 2.8rem;
+//       }
+//     }
+
+//     a {
+//       font-size: 2.5rem;
+//       color: currentColor;
+//       text-decoration: none;
+
+//       &:focus {
+//         text-decoration: underline;
+//       }
+
+//       &[aria-current] {
+//         color: var(--c-primary);
+//         text-decoration: underline;
+//       }
+//     }
+//   }
+
+//   &.is-open {
+//     height: 100vh;
+//     position: fixed;
+//     inset: 0;
+//     z-index: 1;
+//     background: white;
+//     padding: var(--gutter-width);
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       inset: 0;
+//       background: url("/themes/pakafestival/assets/images/topo-tile.png") repeat;
+//       opacity: 0.03;
+//       z-index: 0;
+//       pointer-events: none;
+//     }
+
+//     ul {
+//       height: 100%;
+//       visibility: visible;
+//       overflow: auto;
+//     }
+//   }
+// }
+
+// .site-header__nav {
+//   font-family: var(--f-title);
+//   letter-spacing: 0.02em;
+//   font-size: 1.3rem;
+
+//   a {
+//     color: var(--c-gray--dark);
+//     text-decoration: none;
+//     transition: color 0.5s;
+
+//     &[aria-current] {
+//       color: var(--c-black);
+//       text-decoration: underline;
+//     }
+
+//     &:not([aria-current]):hover {
+//       color: var(--c-primary);
+//     }
+//   }
+
+//   ul {
+//     display: flex;
+//     align-items: center;
+//     gap: 2rem;
+//     list-style-type: none;
+//     padding: 0;
+//     margin: 0;
+//   }
+// }
+
+// .social-links__nav {
+//   display: flex;
+//   justify-content: flex-end;
+//   gap: 0.5rem;
+//   margin-bottom: 1.25rem;
+
+//   a {
+//     display: inline-flex;
+//     color: var(--c-gray--dark);
+//     transition: color 0.5s;
+//     border-radius: 100%;
+
+//     &:hover,
+//     &:focus-visible {
+//       color: var(--c-primary);
+//     }
+//   }
+
+//   svg {
+//     width: 1.5rem;
+//     height: 1.5rem;
+//   }
+// }

@@ -5,6 +5,7 @@
   gap: 0.5rem;
   align-items: center;
   padding: 0.875rem 1.25rem;
+  border: 0;
   border-radius: 1.25rem;
   background-color: var(--c-secondary);
 
@@ -17,6 +18,7 @@
   transition: transform 0.5s;
   transform-origin: center;
   will-change: transform;
+  cursor: pointer;
 
   svg {
     width: 1.5rem;
@@ -29,7 +31,7 @@
   }
 
   // styles
-  $styles: "primary", "secondary", "third", "fourth";
+  $styles: "primary", "secondary", "third", "fourth", "light";
   @each $style in $styles {
     &--#{$style} {
       background-color: var(--c-#{$style});
@@ -53,5 +55,10 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &--as-icon {
+    padding: 1.25rem;
+    border-radius: 100%;
   }
 }

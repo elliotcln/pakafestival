@@ -1,3 +1,8 @@
+<?php
+get_template_part('partials/common/section', 'related-links');
+get_template_part('partials/common/section', 'partners');
+get_template_part('partials/common/section', 'newsletter');
+?>
 <footer role="contentinfo" class="site-footer">
     <hr>
     <div class="container">

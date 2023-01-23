@@ -9,11 +9,6 @@
             get_template_part('partials/content', get_post_type());
         }
     } ?>
-
-    <?php
-    get_template_part('partials/common/section', 'related-links');
-    get_template_part('partials/common/section', 'partners');
-    ?>
 </main>
 
 <?php get_footer(); ?>
