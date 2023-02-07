@@ -97,4 +97,18 @@
             </g>
         </g>
     </symbol>
+
+    <!-- chevron down -->
+    <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" id="chevron-down">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+            <path d="M18,10 L12.3536,15.6464 C12.1583,15.8417 11.8417,15.8417 11.6464,15.6464 L6,10" id="Path" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+    </symbol>
+    <!-- info icon -->
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="info">
+        <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path opacity="0.7" d="M12 8V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path opacity="0.7" d="M11.9941 16H12.0031" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
 </svg>

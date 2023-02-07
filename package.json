@@ -5,6 +5,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "a11y-menu": "^1.0.2",
     "dotenv": "^16.0.3",
     "plyr": "^3.7.3",
     "sass": "^1.57.1",

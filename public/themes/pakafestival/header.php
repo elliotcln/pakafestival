@@ -9,15 +9,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
+    <?php wp_body_open();
+    set_skip_links();
+    ?>
 
     <header role="banner" class="site-header">
         <div class="container">
 
-            <div class="brand">
-                <?php the_custom_logo(); ?>
-            </div>
-            <button class="button button--secondary button--as-icon" id="js-toggle-mobile-nav">
+            <?php the_custom_logo(); ?>
+            <button class="button button--secondary button--as-icon button-toggle-nav" id="js-toggle-mobile-nav">
                 <svg class="icon open" aria-label="ouvrir le menu mobile">
                     <use xlink:href="#menu-fries"></use>
                 </svg>
@@ -32,76 +32,28 @@
                     'theme_location' => 'main',
                     'container' => 'nav',
                     'container_class' => 'main-nav',
-                    'container_aria_label' => 'principale'
+                    'container_aria_label' => 'principale',
+                    'menu_id' => 'am-main-menu',
+                    'walker' => new A11y\Menu_Walker()
                 ));
                 ?>
+
+                <?php
+                $links = [
+                    'facebook' => 'https://www.facebook.com/pakafestival',
+                    'instagram' => 'https://www.instagram.com/pakafestival/',
+                    'youtube' => 'https://www.youtube.com/@PAKATVLifeMusicTravel'
+                ];
+                ?>
                 <nav aria-label="réseaux sociaux" class="social-links__nav">
-                    <a href="" target="_blank">
-                        <svg class="icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                    <a href="" target="_blank">
-                        <svg class="icon">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                    <a href="" target="_blank">
-                        <svg class="icon">
-                            <use xlink:href="#youtube"></use>
-                        </svg>
-                    </a>
+                    <?php foreach ($links as $key => $link) : ?>
+                        <a href="<?= $link; ?>" target="_blank" aria-label="<?= $key; ?> (nouvelle fenêtre)">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#<?= $key; ?>"></use>
+                            </svg>
+                        </a>
+                    <?php endforeach; ?>
                 </nav>
             </div>
-
-            <!-- <nav aria-label="mobile" class="site-header__mobile-nav">
-                <div class="brand">
-                    <?php the_custom_logo(); ?>
-                </div>
-                <button class="button button--secondary button--as-icon" id="js-toggle-mobile-nav">
-                    <svg class="icon" aria-label="ouvrir/fermer le menu mobile">
-                        <use xlink:href="#menu-fries"></use>
-                    </svg>
-                </button>
-
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'main',
-                    'container' => null,
-                ));
-                ?>
-
-            </nav>
-
-            <div hidden>
-                <div class="brand">
-                    <?php the_custom_logo(); ?>
-                </div>
-                <nav aria-label="réseaux sociaux" class="social-links__nav">
-                    <a href="" target="_blank">
-                        <svg class="icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                    <a href="" target="_blank">
-                        <svg class="icon">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                    <a href="" target="_blank">
-                        <svg class="icon">
-                            <use xlink:href="#youtube"></use>
-                        </svg>
-                    </a>
-                </nav>
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'main',
-                    'container' => 'nav',
-                    'container_class' => 'site-header__nav',
-                    'container_aria_label' => 'principale'
-                ));
-                ?>
-            </div> -->
         </div>
     </header>

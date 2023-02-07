@@ -25,6 +25,10 @@ function the_breadcrumb($post_ID)
         $bread .= '<li><a href="' . get_permalink($blog_id) . '"><span>' . get_the_title($blog_id) . '</span></a></li>';
         $bread .= '<li aria-hidden="true"><span>' . $separator . '</span></li>';
     }
+    // if (is_home()) {
+    //     $blog_id = get_option('page_for_posts');
+    //     $bread .= '<li><a href="' . get_permalink($blog_id) . '"><span>' . get_the_title($blog_id) . '</span></a></li>';
+    // }
     $bread .= '<li ' . $attrs . '><span>' . get_the_title($post_ID) . '</span></li>';
     $bread .= '</ol>';
     $bread .= '</nav>';

@@ -1,0 +1,19 @@
+.blog {
+  .single-post__content {
+    padding-block: 4rem;
+
+    ul {
+      gap: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    img.attachment-post-thumbnail {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}

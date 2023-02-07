@@ -1,0 +1,20 @@
+nav.skip-links-navigation {
+  a {
+    position: absolute;
+    left: var(--gutter-width);
+    top: var(--gutter-width);
+    padding: 1rem;
+    background-color: var(--c-secondary);
+    color: currentColor;
+
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+
+    &:focus,
+    &:active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

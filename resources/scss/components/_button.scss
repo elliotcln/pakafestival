@@ -18,7 +18,10 @@
   transition: transform 0.5s;
   transform-origin: center;
   will-change: transform;
-  cursor: pointer;
+
+  &:is(a, button) {
+    cursor: pointer;
+  }
 
   svg {
     width: 1.5rem;
@@ -35,10 +38,12 @@
   @each $style in $styles {
     &--#{$style} {
       background-color: var(--c-#{$style});
-      @if ($style == "third") {
-        color: var(--c-white);
+      @if $style == "light" {
+        color: var(--c-black);
+      } @else if $style == "secondary" {
+        color: var(--c-black);
       } @else {
-        color: currentColor;
+        color: var(--c-white);
       }
 
       &:focus-visible {
@@ -60,5 +65,9 @@
   &--as-icon {
     padding: 1.25rem;
     border-radius: 100%;
+  }
+
+  &--small {
+    padding: 1rem;
   }
 }

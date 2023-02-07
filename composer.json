@@ -14,6 +14,7 @@
         "roots/wordpress": "^6.1",
         "roots/wp-password-bcrypt": "^1.1",
         "symfony/http-foundation": "^6.0",
+        "ucomm/a11y-menu": "^1.0",
         "vinkla/headache": "^2.4",
         "vlucas/phpdotenv": "^5.5",
         "wpackagist-plugin/advanced-custom-fields": "^6.0",

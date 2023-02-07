@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03f5397deb6624972e9ff4d7ae186aae",
+    "content-hash": "e60920d07faa8323bdf8a7ad168b5343",
     "packages": [
         {
             "name": "composer/installers",
@@ -1021,6 +1021,60 @@
                 }
             ],
             "time": "2022-11-03T14:55:06+00:00"
+        },
+        {
+            "name": "ucomm/a11y-menu",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aberkow/a11y-menu.git",
+                "reference": "f68e47d3ccc9ec888eadf0c10f51b76cd0f5ff16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aberkow/a11y-menu/zipball/f68e47d3ccc9ec888eadf0c10f51b76cd0f5ff16",
+                "reference": "f68e47d3ccc9ec888eadf0c10f51b76cd0f5ff16",
+                "shasum": ""
+            },
+            "require-dev": {
+                "johnpbloch/wordpress": "@stable",
+                "wpackagist-plugin/query-monitor": "dev-trunk",
+                "wpackagist-plugin/wordpress-importer": "^0.7",
+                "wpackagist-theme/twentytwenty": "^1.5"
+            },
+            "type": "library",
+            "extra": {
+                "installer-paths": {
+                    "./www/content/plugins/{$name}": [
+                        "type:wordpress-plugin"
+                    ],
+                    "./www/content/themes/{$name}": [
+                        "type:wordpress-theme"
+                    ]
+                },
+                "wordpress-install-dir": "./www/wordpress"
+            },
+            "autoload": {
+                "psr-4": {
+                    "A11y\\": "src/A11y/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Berkowitz",
+                    "email": "adam@adamjberkowitz.com"
+                }
+            ],
+            "description": "A package to generate accessible main navigation menus. It includes: a js script for the browser as an npm package, WordPress walker for theme development, and WordPress plugin.",
+            "support": {
+                "issues": "https://github.com/aberkow/a11y-menu/issues",
+                "source": "https://github.com/aberkow/a11y-menu/tree/v1.0.2"
+            },
+            "time": "2021-01-06T19:40:15+00:00"
         },
         {
             "name": "vinkla/headache",

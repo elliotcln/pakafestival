@@ -108,7 +108,31 @@ function ttt_mime_types($mimes)
 
 add_filter('upload_mimes', 'ttt_mime_types');
 
+/**
+ * Set skip links to the top of the page
+ *
+ * @param string $contentId
+ * @param string $contentLabel
+ * @param string $navId
+ * @param string $navLabel
+ * @return void
+ */
+function set_skip_links(
+    $contentId = '#main-content',
+    $contentLabel = 'Aller au contenu principal'
+) {
+    $skiplinks = '<nav aria-label="Liens d\'évitement" class="skip-links-navigation">';
+    $skiplinks .= "<a href='" . $contentId . "'>" . $contentLabel . "</a>";
+    $skiplinks .= "</nav>";
+
+    echo $skiplinks;
+}
+
 // get breadcrumb function
 include get_theme_file_path('inc/breadcrumb.php');
 // ACF
 include get_theme_file_path('inc/acf.php');
+// nav wlaker
+include get_theme_file_path('inc/nav-walker.php');
+// artists functions
+include get_theme_file_path('inc/artists.php');
